@@ -12,11 +12,12 @@ var ball = svgContainer.append('circle')
                         .attr('fill', 'red');
 //Functions
 function move() {
-                ball.transition().attr('cx', '100').attr('cy', '100').duration(1000);
+                ball.transition().attr('cx', '100').duration(1000);
+                ball.transition().attr('cy', '100').duration(1000);
 };
 
 function changecolor() {
-                        ball.transition().attr('fill', 'blue').duration(1000);
+                        ball.attr('fill', 'blue');
 };
 
 function resize() {
