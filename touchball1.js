@@ -12,8 +12,8 @@ var ball = svgContainer.append('circle')
                         .attr('fill', 'red');
 //Functions
 function move() {
-                ball.transition().attr('cx', '100').duration(1000);
-                ball.transition().attr('cy', '100').duration(1000);
+                ball.transition().attr('cx', 100).duration(1000);
+                ball.transition().attr('cy', 100).duration(1000);
 };
 
 function changecolor() {
@@ -21,7 +21,7 @@ function changecolor() {
 };
 
 function resize() {
-                    ball.transition().attr('r', '50').duration(1000);
+                    ball.transition().attr('r', 50).duration(1000);
 };
 
 function ballReact() {
