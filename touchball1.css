@@ -1,0 +1,35 @@
+body, input, select, textarea { 
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400; 
+    font-size: 13pt;
+	  line-height: 1.75em;
+		letter-spacing: 0.025em;
+     background-color: #ccffee;}
+
+	hr
+	{
+		margin: 2em 0 2em 0;
+	}
+
+	section,
+	article
+	{
+		margin: 0 0 4em 0;
+	}
+
+	header.style1
+	{
+		padding: 3em 0 3em 0;
+	}
+
+	h1,h2,h3,h4,h5,h6
+	{
+		font-weight: 700;
+		color: #484d55;
+	}
+	
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+	{
+		color: inherit;
+		text-decoration: none;
+	}
