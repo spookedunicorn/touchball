@@ -20,7 +20,7 @@ function changecolor() {
 };
 
 function resize() {
-                    ball.transition().attr('r', '50').duration(1000);
+                    ball.transition().attr('r', '50').duration(5000);
 };
 
 function ballReact() {
