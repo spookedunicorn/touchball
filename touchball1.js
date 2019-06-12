@@ -1,33 +1,68 @@
-
-//Make an SVG container
+//Create an SVG container
 var svgContainer = d3.select('body').append('svg')
-                                    .attr('width', 200)
-                                    .attr('height', 200);
+                                    .attr('width', 400)
+                                    .attr('height', 400);
 
 //Draw the ball
+let ballData = {
+                cx : 100,
+                cy : 100,
+                 r : 30,
+              fill : 'red',
+};
+
 var ball = svgContainer.append('circle')
-                        .attr('cx', 30)
-                        .attr('cy', 30)
-                        .attr('r', 20)
-                        .attr('fill', 'red');
+                        .attr('cx', ballData.cx)
+                        .attr('cy', ballData.cy)
+                        .attr('r', ballData.r)
+                        .attr('fill', ballData.fill);
+
+//Colour options
+var colours = ['red',
+                'blue',
+                'green',
+                'purple',
+                'yellow',
+                'cyan',
+                'brown',
+                'orange',
+                'magenta',
+];
+
 //Functions
-function move() {
-                ball.transition().attr('cx', 100).duration(1000);
-                ball.transition().attr('cy', 100).duration(1000);
+function RandNum(min, max) {
+                          min = Math.ceil(min);
+                          max = Math.floor(max);
+                          return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function changecolor() {
-                        ball.attr('fill', 'blue');
+function pickPos(n) {
+  if (n < 200)
+    return ( + RandNum(10, 100));
+  else
+    return ( - RandNum(10, 100));
 };
 
-function resize() {
-                    ball.transition().attr('r', 50).duration(1000);
+function pickSize(n) {
+  if (n < 50)
+    return ( + RandNum(10, 40));
+  else
+    return ( - RandNum(10, 40));
 };
 
-function ballReact() {
-                    move();
-                    changecolor();
-                    resize();
+function ballReact() { ballData.cx = ballData.cx + pickPos(ballData.cx);
+                     
+                      ballData.cy = ballData.cy + pickPos(ballData.cy);
+                  
+                      ballData.r = ballData.r + pickSize(ballData.r);
+                      
+                      ballData.fill = colours[Math.floor(Math.random()*colours.length)];
+                      
+                      ball.transition().duration(1000)
+                      .attr('cx', ballData.cx)
+                      .attr('cy', ballData.cy)
+                      .attr('r', ballData.r)
+                      .attr('fill', ballData.fill);
 };
 
 //Ball reactions
